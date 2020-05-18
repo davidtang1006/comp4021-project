@@ -27,7 +27,7 @@
         <h5 class="card-header">Page 1 of 2</h5>
 
         <div class="card-body">
-            <form>
+            <form style="display: none">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="input-1a">Input 1a</label>
@@ -66,16 +66,42 @@
                 </div>
             </form>
 
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center m-4">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
+            <form>
+                <div class="form-group">
+                    <label for="input-2a">Input 2a</label>
+                    <textarea class="form-control" id="input-2a" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="input-2b">Input 2b</label>
+                        <select multiple class="form-control" id="input-2b">
+                            <option name="input-2b-1">1</option>
+                            <option name="input-2b-2">2</option>
+                            <option name="input-2b-3">3</option>
+                            <option name="input-2b-4">4</option>
+                            <option name="input-2b-5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="input-2c">Input 2c</label>
+                        <input type="range" class="form-control-range" id="input-2c">
+                    </div>
+                </div>
+            </form>
+            <button type="submit" class="btn btn-primary mt-4">Submit form</button>
         </div>
     </div>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center m-4">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
 </body>
 
 </html>
