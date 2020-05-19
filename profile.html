@@ -46,6 +46,9 @@
             });
 
             $("#submit-form").on("submit", function () {
+                var params = JSON.stringify($("#submit-form").serializeArray());
+                console.log(params);
+                alert();
             });
         });
 
@@ -111,29 +114,31 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="input-1a">Input 1a</label>
-                            <input type="email" class="form-control" id="input-1a">
+                            <input type="email" class="form-control" id="input-1a" name="input-1a">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="input-1b">Input 1b (masked)</label>
-                            <input type="password" class="form-control" id="input-1b">
+                            <input type="password" class="form-control" id="input-1b" name="input-1b">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="input-1c">Input 1c</label>
-                        <input type="text" class="form-control" id="input-1c" placeholder="Placeholder text">
+                        <input type="text" class="form-control" id="input-1c" name="input-1c"
+                            placeholder="Placeholder text">
                     </div>
                     <div class="form-group">
                         <label for="input-1d">Input 1d</label>
-                        <input type="text" class="form-control" id="input-1d" placeholder="Placeholder text">
+                        <input type="text" class="form-control" id="input-1d" name="input-1d"
+                            placeholder="Placeholder text">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="input-1e">Input 1e</label>
-                            <input type="text" class="form-control" id="input-1e">
+                            <input type="text" class="form-control" id="input-1e" name="input-1e">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="input-1f">Input 1f</label>
-                            <select id="input-1f" class="form-control">
+                            <select id="input-1f" class="form-control" name="input-1f">
                                 <option selected value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -141,7 +146,7 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="input-1g">Input 1g</label>
-                            <input type="text" class="form-control" id="input-1g">
+                            <input type="text" class="form-control" id="input-1g" name="input-1g">
                         </div>
                     </div>
 
@@ -234,24 +239,25 @@
                 <div class="form-group" style="display: none" id="page-2">
                     <div class="form-group">
                         <label for="input-2a">Input 2a</label>
-                        <textarea class="form-control" id="input-2a" rows="3"></textarea>
+                        <textarea class="form-control" id="input-2a" name="input-2a" rows="3"></textarea>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="input-2b">Input 2b</label>
-                            <select multiple class="form-control" id="input-2b">
-                                <option name="input-2b-1">1</option>
-                                <option name="input-2b-2">2</option>
-                                <option name="input-2b-3">3</option>
-                                <option name="input-2b-4">4</option>
-                                <option name="input-2b-5">5</option>
+                            <select multiple class="form-control" id="input-2b" name="input-2b[]">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="input-2c">Input 2c</label>
-                            <input type="range" class="form-control-range" id="input-2c">
+                            <input type="range" class="form-control-range" id="input-2c" name="input-2c" min="0"
+                                max="5">
                         </div>
                     </div>
 
