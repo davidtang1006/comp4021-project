@@ -19,30 +19,26 @@
         var pageNum = 1;
 
         var minPage = 1;
-        var maxPage = 2;
+        var maxPage = 3;
 
         $(document).ready(function () {
+            window.location.hash = 1;
+
             $(window).on('hashchange', function () {
-                hidePrevPageContent(pageNum)
+                $(window).scrollTop(0);
+
+                hidePrevPageContent(pageNum);
                 pageNum = parseInt(window.location.hash.split('#').pop()); // (!)
                 updatePageContent(pageNum);
             });
         });
 
         function prevPage() {
-            hidePrevPageContent(pageNum)
-            pageNum -= 1;
-            updatePageContent(pageNum);
-
-            window.location.hash = pageNum;
+            window.location.hash = parseInt(window.location.hash.split('#').pop()) - 1;
         }
 
         function nextPage() {
-            hidePrevPageContent(pageNum)
-            pageNum += 1;
-            updatePageContent(pageNum);
-
-            window.location.hash = pageNum;
+            window.location.hash = parseInt(window.location.hash.split('#').pop()) + 1;
         }
 
         function hidePrevPageContent(pageNum) {
@@ -82,7 +78,7 @@
     </nav>
 
     <div class="card m-4">
-        <h5 class="card-header">Page <span id="page-num">1</span> of 2</h5>
+        <h5 class="card-header">Page <span id="page-num">1</span> of 3</h5>
 
         <div class="card-body">
             <form id="page-1">
@@ -124,31 +120,137 @@
                 </div>
             </form>
 
-            <form style="display: none" id="page-2">
-                <div class="form-group">
-                    <label for="input-2a">Input 2a</label>
-                    <textarea class="form-control" id="input-2a" rows="3"></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="input-2b">Input 2b</label>
-                        <select multiple class="form-control" id="input-2b">
-                            <option name="input-2b-1">1</option>
-                            <option name="input-2b-2">2</option>
-                            <option name="input-2b-3">3</option>
-                            <option name="input-2b-4">4</option>
-                            <option name="input-2b-5">5</option>
-                        </select>
+            <div style="display: none" id="page-2">
+                <form>
+                    <div class="form-group">
+                        <label for="input-2a">Input 2a</label>
+                        <textarea class="form-control" id="input-2a" rows="3"></textarea>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="input-2c">Input 2c</label>
-                        <input type="range" class="form-control-range" id="input-2c">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="input-2b">Input 2b</label>
+                            <select multiple class="form-control" id="input-2b">
+                                <option name="input-2b-1">1</option>
+                                <option name="input-2b-2">2</option>
+                                <option name="input-2b-3">3</option>
+                                <option name="input-2b-4">4</option>
+                                <option name="input-2b-5">5</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <button type="submit" class="btn btn-primary mt-4">Submit form</button>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="input-2c">Input 2c</label>
+                            <input type="range" class="form-control-range" id="input-2c">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <h6>Lorem Ipsum</h6>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh lectus, sollicitudin a sagittis
+                    sed, dapibus dapibus nunc. Fusce venenatis lorem tincidunt, laoreet enim ac, dictum ex. Nunc et enim
+                    lectus. Integer in scelerisque ex. Duis sed sem ultricies, vestibulum enim nec, hendrerit urna.
+                    Aenean nec turpis ipsum. Sed at quam nisi. Maecenas in feugiat est, sit amet ultricies quam. Quisque
+                    malesuada, nulla vitae vestibulum finibus, ex nulla finibus mi, vitae molestie neque lacus vel nisi.
+                    Curabitur iaculis aliquet erat vitae suscipit. Mauris id lorem et libero eleifend lacinia in euismod
+                    sapien. Proin bibendum placerat ipsum, sed pulvinar quam eleifend ac. Etiam ultrices eu nisl at
+                    commodo. Ut sollicitudin dolor vel quam semper, et scelerisque lectus posuere. Suspendisse eget
+                    scelerisque arcu. Curabitur tempus risus eros, ac convallis tortor dapibus sit amet.
+                </p>
+                <p>
+                    Aliquam sed imperdiet turpis. Mauris ut massa sit amet tellus maximus posuere. Cras eu mauris
+                    fermentum, malesuada nunc in, dictum elit. Phasellus consequat sit amet massa quis facilisis.
+                    Phasellus at est vitae turpis tincidunt euismod. Quisque non lacus at erat fermentum hendrerit at ut
+                    odio. Maecenas vel condimentum massa. Donec sed felis pretium, feugiat sem quis, eleifend mi.
+                    Aliquam at nisi purus. Cras nisi augue, efficitur vel sapien in, ultrices porttitor justo. Nam non
+                    dolor sit amet nulla mollis vulputate. Aliquam id tortor et urna suscipit consequat. Etiam vitae
+                    purus elit. Mauris in ornare tellus. Curabitur arcu nunc, auctor sit amet odio vitae, ullamcorper
+                    sodales ante. Donec eget vehicula nunc.
+                </p>
+                <p>
+                    Fusce eget odio ante. Aliquam accumsan porttitor condimentum. Pellentesque lacinia purus lorem, sit
+                    amet dictum tellus sagittis ac. Aliquam vitae arcu convallis, molestie neque cursus, porttitor quam.
+                    Nulla aliquet nec enim eu dictum. Vestibulum luctus nunc vitae ex tempor, id bibendum ipsum mollis.
+                    Nullam id ex non metus maximus fringilla. Donec porta magna sed commodo condimentum. Praesent vitae
+                    nulla ex. Donec eu massa ac velit eleifend blandit. Quisque varius, metus non viverra feugiat, odio
+                    ante pharetra quam, nec aliquet turpis quam ut massa. Pellentesque sed augue quam.
+                </p>
+                <p>
+                    Phasellus eleifend ante id arcu luctus vulputate. Donec id orci eu risus ornare porttitor. Sed in
+                    aliquet mi. Cras aliquam est id ante scelerisque tincidunt. Integer in condimentum urna. Nam quis
+                    vestibulum diam, eu luctus dolor. Aliquam efficitur, dui eget fringilla sollicitudin, libero erat
+                    tincidunt turpis, vel volutpat eros justo in nunc. Class aptent taciti sociosqu ad litora torquent
+                    per conubia nostra, per inceptos himenaeos. Duis at congue diam, non dignissim velit. Phasellus ac
+                    semper lectus. Mauris at scelerisque risus.
+                </p>
+                <p>
+                    Aliquam non felis turpis. Suspendisse consequat odio vel justo vestibulum, at vestibulum ligula
+                    placerat. Nulla quis venenatis ante. Praesent efficitur varius sagittis. Sed pellentesque libero
+                    ipsum, eget fermentum enim faucibus faucibus. Donec libero est, tempor sed dolor a, tristique porta
+                    magna. Quisque ultricies erat tortor, in semper enim porttitor ultricies. Nulla euismod rhoncus
+                    augue nec laoreet. Maecenas nulla risus, ullamcorper hendrerit mauris rutrum, sollicitudin congue
+                    nunc. Morbi eu elit quis lectus finibus varius. Class aptent taciti sociosqu ad litora torquent per
+                    conubia nostra, per inceptos himenaeos. Nam iaculis velit eget libero vulputate condimentum. Donec
+                    in turpis ut ligula aliquet auctor.
+                </p>
+                <p>
+                    Ut rutrum aliquam odio, vel tincidunt libero. Donec hendrerit vitae mi tristique viverra. Nullam est
+                    purus, vulputate ut odio a, dictum mattis orci. Curabitur tincidunt, arcu quis gravida malesuada,
+                    justo augue facilisis ante, ut aliquet dolor libero a ligula. Vestibulum sit amet volutpat libero.
+                    Praesent metus magna, venenatis et placerat sed, venenatis vitae libero. Morbi mi tellus, blandit
+                    vel pretium vulputate, sagittis ac nisi. Ut tristique, urna in pretium efficitur, urna quam eleifend
+                    tellus, a posuere lectus nisi vitae libero. Aliquam erat volutpat. Suspendisse tincidunt iaculis
+                    velit ac ullamcorper. Nunc commodo, augue eget rutrum volutpat, velit ipsum rhoncus nulla, eget
+                    iaculis enim felis at risus. Etiam vitae ultricies lacus, ut semper quam. Vestibulum condimentum
+                    risus sed elit volutpat finibus. Suspendisse potenti.
+                </p>
+                <p>
+                    Proin eget ligula vulputate erat suscipit molestie non eget urna. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam auctor lectus vel laoreet dapibus. Aliquam vel risus tortor.
+                    Vivamus dignissim lectus ipsum, eu consectetur mi pharetra sed. Phasellus nec porttitor tellus, sit
+                    amet lacinia est. Cras quis efficitur urna. Morbi velit sem, placerat id eleifend id, auctor
+                    condimentum sem.
+                </p>
+                <p>
+                    Nunc luctus ultrices est, at tempor justo fringilla sit amet. Sed in erat nisl. Integer placerat
+                    diam gravida nunc interdum, eget pellentesque nulla finibus. Nunc nulla erat, interdum ut mattis et,
+                    scelerisque vel nunc. Nunc a cursus leo, ut lobortis libero. Integer accumsan diam et risus
+                    pellentesque laoreet. Nulla a imperdiet lorem. Pellentesque aliquet ipsum eget est cursus porta.
+                    Aenean eu arcu magna. Cras at turpis eget nisi pellentesque consequat id non tortor. Maecenas sit
+                    amet magna in quam sagittis maximus. Suspendisse in lacinia turpis. Curabitur placerat commodo
+                    turpis, sit amet interdum lectus lobortis nec. Curabitur ut erat in ante pharetra luctus. Maecenas
+                    at urna molestie, feugiat orci eget, scelerisque urna.
+                </p>
+                <p>
+                    Donec sit amet tristique est, quis posuere dui. Mauris auctor vitae leo non blandit. Proin placerat,
+                    nibh at laoreet iaculis, metus metus facilisis elit, vel luctus ex justo eget ex. Cras faucibus
+                    justo at dapibus porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Curabitur urna massa, pulvinar vel dictum eget, cursus ut ipsum. Ut suscipit
+                    lacinia ipsum aliquam imperdiet. Ut lectus elit, aliquet id molestie eget, luctus a odio. Duis
+                    lobortis fringilla pharetra. Suspendisse in dapibus magna. Aliquam pellentesque tellus nec nisi
+                    efficitur, ut ornare elit egestas. Pellentesque habitant morbi tristique senectus et netus et
+                    malesuada fames ac turpis egestas. Fusce ullamcorper quam nibh, non eleifend est iaculis sit amet.
+                    Quisque mollis tortor id ex sollicitudin dictum. Donec egestas congue magna, at cursus turpis
+                    pulvinar dapibus.
+                </p>
+                <p>
+                    Nam lectus ante, ultrices ut arcu in, malesuada ultricies nulla. Integer convallis libero quis
+                    mauris ornare pharetra. In consectetur enim quis dapibus malesuada. Aliquam eu finibus quam, non
+                    imperdiet eros. Sed auctor finibus urna ut dignissim. Integer sit amet convallis dui. Phasellus
+                    porta rhoncus nulla nec volutpat. Nulla et purus a dui porttitor fermentum. Nam et placerat ante.
+                    Phasellus pulvinar diam in ex bibendum, ac condimentum lacus consequat. Cras et pretium nulla, ac
+                    pretium leo. Praesent aliquet mauris id nisl hendrerit, quis euismod nunc pharetra. Sed rhoncus a
+                    dui at vestibulum.
+                </p>
+            </div>
+
+            <div style="display: none" id="page-3">
+                <button type="submit" class="btn btn-primary mt-4">Submit form</button>
+            </div>
         </div>
     </div>
 
@@ -157,6 +259,7 @@
             <li class="page-item disabled"><a class="page-link" href="javascript:prevPage()" id="prev">Previous</a></li>
             <li class="page-item page-1 active"><a class="page-link" href="#1">1</a></li>
             <li class="page-item page-2"><a class="page-link" href="#2">2</a></li>
+            <li class="page-item page-3"><a class="page-link" href="#3">3</a></li>
             <li class="page-item"><a class="page-link" href="javascript:nextPage()" id="next">Next</a></li>
         </ul>
     </nav>
