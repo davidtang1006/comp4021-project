@@ -46,9 +46,15 @@
             });
 
             $("#submit-form").on("submit", function () {
-                var params = JSON.stringify($("#submit-form").serializeArray());
+                var params = $("#submit-form").serialize();
                 console.log(params);
-                alert();
+                alert("Please check the console.");
+                $.ajax({
+                    type: "POST",
+                    url: "insert.php",
+                    data: params,
+                    success: function () { },
+                });
             });
         });
 
